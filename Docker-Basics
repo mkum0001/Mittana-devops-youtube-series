@@ -1,0 +1,24 @@
+********* Docker installation page *************
+
+https://docs.docker.com/desktop/
+
+******installl of docker on ubuntu**************
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh --dry-run
+
+Docker commands:
+
+1. Docker pull ubuntu
+2. docker run buntu 
+3. docker run -d centos sleep 100
+2495af06b196a77c7aae57887d1b14a7c1512edc9ebfed8fe8d98dce6dcf9314
+
+4. docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                               NAMES
+2495af06b196   centos    "sleep 100"              5 seconds ago    Up 5 seconds                                        stoic_sammet
+
+5. docker ps -a
+
+6. docker run -p 80:80 -d nginx
+
+7. docker exec -it container-id /bin/bash
