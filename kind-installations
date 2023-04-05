@@ -1,0 +1,40 @@
+
+How to install Docker on ubuntu EC2 machine  / SKIP this if you have docker desktop
+
+https://docs.docker.com/engine/install/ubuntu/ 
+ 
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh 
+ 
+
+
+*************how to install Kind***************
+
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
+
+**********how to install kubectl************
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+
+vi test.yaml
+
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+
+***********create a cluster****************
+kind create cluster --config test.yaml
+************* check cluster info ***********
+kubectl cluster-info --context kind-kind
+
+
+
