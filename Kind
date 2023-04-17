@@ -39,3 +39,5 @@ nodes:
   - containerPort: 30003
     hostPort: 30003
 - role: worker
+
+ kind create cluster --config=test.yaml --name=ch02
