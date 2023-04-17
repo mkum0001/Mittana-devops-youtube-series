@@ -4,7 +4,7 @@ metadata:
   name: webservice-2
 spec:
   selector:
-    app: web
+    app: nginx-2
   ports:
   - protocol: TCP
     port: 8001
