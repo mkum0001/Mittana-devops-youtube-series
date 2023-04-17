@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata: 
-  name: guestbook1
-  namespace: anilA
-spec: 
-  destination: 
+metadata:
+  name: AnilA
+  namespace: argocd
+spec:
+  destination:
     namespace: anilA
     server: "https://kubernetes.default.svc"
   project: default
-  source: 
+  source:
     path: argo
     repoURL: "https://github.com/mkum0001/Mittana-devops-youtube-series"
-    targetRevision: master
+    targetRevision: main
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
