@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: AnilA
+  name: guestbook1
   namespace: argocd
 spec:
   destination:
-    namespace: anilA
+    namespace: anilargo
     server: "https://kubernetes.default.svc"
   project: default
   source:
@@ -15,3 +15,4 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+
